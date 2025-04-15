@@ -1,0 +1,438 @@
+/* 기본 스타일 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 스타일 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mode-toggle button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.mode-toggle button.active {
+    background-color: #3498db;
+    color: white;
+}
+
+/* 테마 토글 버튼 */
+.theme-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.theme-toggle button {
+    padding: 8px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* 언어 토글 버튼 */
+.lang-toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.lang-toggle button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* 시간 표시 영역 */
+.time-display {
+    font-size: 3.5rem;
+    text-align: center;
+    margin: 30px 0;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* 타이머 입력 영역 */
+.timer-input {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.input-group input {
+    width: 80px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.2rem;
+}
+
+/* 빠른 타이머 버튼 */
+.quick-timer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.quick-timer-btn {
+    padding: 6px 10px;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.quick-timer-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* 컨트롤 버튼 */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.controls button i {
+    font-size: 0.9rem;
+}
+
+.primary-btn {
+    background-color: #27ae60;
+    color: white;
+}
+
+.controls button:not(.primary-btn) {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.controls button:hover {
+    opacity: 0.9;
+}
+
+.controls button:disabled {
+    opacity: 0.5;
+    cursor: default; /* not-allowed에서 default로 변경 */
+}
+
+/* 랩 타임 영역 */
+.lap-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#lapBtn {
+    padding: 8px 16px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#lapBtn:disabled {
+    opacity: 0.5;
+    cursor: default; /* not-allowed에서 default로 변경 */
+}
+
+.lap-times {
+    list-style: none;
+    max-height: none; /* 최대 높이 제한 제거 */
+    overflow-y: visible; /* 스크롤 제거 */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.lap-times li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lap-times li:last-child {
+    border-bottom: none;
+}
+
+.lap-times li div {
+    display: flex;
+    align-items: center;
+}
+
+.lap-interval {
+    font-size: 0.85em;
+    color: #666;
+    margin-right: 10px;
+}
+
+.total-time {
+    font-weight: bold;
+}
+
+/* 섹션 표시/숨김 */
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+/* 다크모드 스타일 */
+body.dark-mode {
+    background-color: #222;
+    color: #f0f0f0;
+}
+
+body.dark-mode .container {
+    background-color: #333;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode header h1 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .time-display {
+    color: #e0e0e0;
+}
+
+body.dark-mode .mode-toggle button:not(.active) {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .controls button:not(.primary-btn) {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .input-group label {
+    color: #ccc;
+}
+
+body.dark-mode .input-group input {
+    background-color: #444;
+    color: #f0f0f0;
+    border-color: #555;
+}
+
+body.dark-mode #lapBtn {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .lap-times {
+    border-color: #555;
+    background-color: #444;
+}
+
+body.dark-mode .lap-times li {
+    border-bottom-color: #555;
+}
+
+body.dark-mode .theme-toggle button {
+    color: #f0f0f0;
+}
+
+body.dark-mode .lang-toggle button {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .quick-timer-btn {
+    background-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .quick-timer-btn:hover {
+    background-color: #555;
+}
+
+body.dark-mode .lap-interval {
+    color: #aaa;
+}
+
+/* 타이머 종료 오버레이 */
+.timer-end-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.timer-end-overlay.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.timer-end-message {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    max-width: 80%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.timer-end-message h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.timer-end-message button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.timer-end-message button:hover {
+    background-color: #2980b9;
+}
+
+body.dark-mode .timer-end-message {
+    background-color: #333;
+}
+
+body.dark-mode .timer-end-message h2 {
+    color: #e0e0e0;
+}
+
+/* 반응형 디자인 - 비율 유지 */
+@media (max-width: 600px) {
+    .container {
+        padding: 3%;
+        width: 100%; /* 화면 너비의 100% */
+        max-width: none;
+        margin: 0 auto;
+        overflow-x: hidden; /* 스크롤 방지 */
+    }
+
+    /* 폰트 크기를 뷰포트 너비에 비례하게 설정 */
+    header h1 {
+        font-size: 8vw; /* 뷰포트 너비의 8% */
+    }
+    
+    .time-display {
+        font-size: 10vw; /* 뷰포트 너비의 10% */
+    }
+    
+    .timer-input {
+        flex-direction: row; /* 행 방향 유지 */
+        gap: 3%;
+    }
+    
+    .input-group input {
+        width: 20vw; /* 뷰포트 너비의 20% */
+        font-size: 5vw;
+    }
+    
+    .controls {
+        flex-wrap: nowrap; /* 버튼 줄바꿈 방지 */
+    }
+    
+    .controls button {
+        flex: none; /* 버튼 크기 원래대로 */
+        font-size: 3.5vw;
+        padding: 2vw 4vw;
+    }
+}

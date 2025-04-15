@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TapTimer - A simple and intuitive timer and stopwatch web app. Easily manage your time with our user-friendly interface.">
+    <meta name="keywords" content="timer, stopwatch, time management, web app, countdown, lap timer">
+    <meta name="author" content="Your Name">
+    
+    <!-- Open Graph tags (for social media sharing) -->
+    <meta property="og:title" content="TapTimer - Simple Timer and Stopwatch">
+    <meta property="og:description" content="A simple and intuitive timer and stopwatch web app. Easily manage your time with our user-friendly interface.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:image" content="https://your-domain.com/og-image.png">
+    
+    <title>TapTimer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- 폰트어썸 아이콘 사용 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="theme-toggle">
+                <button id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="lang-toggle">
+                <button id="langToggleBtn">한/EN</button>
+            </div>
+            <h1>TapTimer</h1>
+            <div class="mode-toggle">
+                <button id="timerBtn" class="active">타이머</button>
+                <button id="stopwatchBtn">스톱워치</button>
+            </div>
+        </header>
+
+        <main>
+            <!-- 타이머 섹션 -->
+            <section id="timerSection" class="active">
+                <div class="time-display">
+                    <span id="timerHours">00</span>:<span id="timerMinutes">00</span>:<span id="timerSeconds">00</span>
+                </div>
+                <div class="timer-input">
+                    <div class="input-group">
+                        <label for="hours">시간</label>
+                        <input type="number" id="hours" min="0" max="23" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="minutes">분</label>
+                        <input type="number" id="minutes" min="0" max="59" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="seconds">초</label>
+                        <input type="number" id="seconds" min="0" max="59" value="0">
+                    </div>
+                </div>
+                <!-- 빠른 시간 설정 버튼 추가 -->
+                <div class="quick-timer-buttons">
+                    <button class="quick-timer-btn" data-seconds="10">10초</button>
+                    <button class="quick-timer-btn" data-seconds="60">1분</button>
+                    <button class="quick-timer-btn" data-seconds="300">5분</button>
+                    <button class="quick-timer-btn" data-seconds="600">10분</button>
+                    <button class="quick-timer-btn" data-seconds="1800">30분</button>
+                    <button class="quick-timer-btn" data-seconds="3600">1시간</button>
+                </div>
+                <div class="controls">
+                    <button id="startTimer" class="primary-btn"><i class="fas fa-play"></i> 시작</button>
+                    <button id="pauseTimer" disabled><i class="fas fa-pause"></i> 일시정지</button>
+                    <button id="resetTimer"><i class="fas fa-redo"></i> 리셋</button>
+                </div>
+            </section>
+
+            <!-- 스톱워치 섹션 -->
+            <section id="stopwatchSection">
+                <div class="time-display">
+                    <span id="stopwatchMinutes">00</span>:<span id="stopwatchSeconds">00</span>.<span id="stopwatchMs">00</span>
+                </div>
+                <div class="controls">
+                    <button id="startStopwatch" class="primary-btn"><i class="fas fa-play"></i> 시작</button>
+                    <button id="pauseStopwatch" disabled><i class="fas fa-pause"></i> 일시정지</button>
+                    <button id="resetStopwatch"><i class="fas fa-redo"></i> 리셋</button>
+                </div>
+                <div class="lap-container">
+                    <button id="lapBtn" disabled><i class="fas fa-flag"></i> 랩 기록</button>
+                    <ul id="lapTimes" class="lap-times"></ul>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 타이머 종료 오버레이 -->
+    <div id="timerEndOverlay" class="timer-end-overlay">
+        <div class="timer-end-message">
+            <h2 id="timerEndText">타이머가 종료되었습니다!</h2>
+            <button id="timerEndCloseBtn">확인</button>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>

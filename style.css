@@ -262,6 +262,62 @@ section.active {
     display: block;
 }
 
+/* 개인정보 처리방침 페이지 스타일 */
+.privacy-content {
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.privacy-content h2 {
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.privacy-content p {
+    margin-bottom: 15px;
+}
+
+.privacy-content a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.privacy-content a:hover {
+    text-decoration: underline;
+}
+
+/* footer 스타일 */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+.footer-nav a {
+    color: #4CAF50; /* 녹색 색상 */
+    text-decoration: none;
+    padding: 0 5px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* 다크모드 footer 스타일 */
+body.dark-mode footer {
+    border-top-color: #555;
+    color: #aaa;
+}
+
+body.dark-mode .footer-nav a {
+    color: #5dade2;
+}
+
+body.dark-mode .footer-nav a:hover {
+    color: #3498db;
+}
+
 /* 다크모드 스타일 */
 body.dark-mode {
     background-color: #222;
@@ -335,6 +391,14 @@ body.dark-mode .quick-timer-btn:hover {
 
 body.dark-mode .lap-interval {
     color: #aaa;
+}
+
+body.dark-mode .privacy-content h2 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .privacy-content a {
+    color: #5dade2;
 }
 
 /* 타이머 종료 오버레이 */

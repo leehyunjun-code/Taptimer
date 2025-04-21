@@ -68,7 +68,9 @@ const translations = {
         min5: '5분',
         min10: '10분',
         min30: '30분',
-        hour1: '1시간'
+        hour1: '1시간',
+		footerHome: '홈',
+        footerPrivacy: '개인정보 처리방침'
     },
     en: {
         timer: 'Timer',
@@ -87,8 +89,12 @@ const translations = {
         min5: '5m',
         min10: '10m',
         min30: '30m',
-        hour1: '1h'
+        hour1: '1h',
+		footerHome: 'Home',
+        footerPrivacy: 'Privacy Policy'
     }
+	
+	
 };
 
 // 모드 전환 이벤트 리스너
@@ -335,6 +341,18 @@ function updateLanguage() {
         const timeText = item.querySelector('span:last-child').textContent;
         item.querySelector('span:first-child').textContent = `${translations[currentLang].lapText} ${lapNumber}`;
     });
+	
+    // footer 링크 업데이트 코드 추가
+    const footerHomeEl = document.getElementById('footerHome');
+    const footerPrivacyEl = document.getElementById('footerPrivacy');
+    
+    if (footerHomeEl) {
+        footerHomeEl.textContent = translations[currentLang].footerHome;
+    }
+    
+    if (footerPrivacyEl) {
+        footerPrivacyEl.textContent = translations[currentLang].footerPrivacy;
+    }	
     
     // 타이머 종료 텍스트도 업데이트
     timerEndText.textContent = translations[currentLang].timerEnd;

@@ -182,8 +182,9 @@
     </div>
 
     <script>
-        // 언어 관련 변수 및 텍스트
-        let currentLang = 'ko'; // 기본값은 한국어
+        // localStorage에서 설정 불러오기
+        let darkMode = localStorage.getItem('darkMode') === 'true' || false;
+        let currentLang = localStorage.getItem('currentLang') || 'ko'; // 기본값은 한국어
 
         const translations = {
             ko: {
@@ -218,9 +219,19 @@
             }
         };
 
+        // 테마 업데이트 함수 추가
+        function updateTheme() {
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
         // 언어 전환 이벤트 리스너
         document.getElementById('langToggleBtn').addEventListener('click', () => {
             currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            localStorage.setItem('currentLang', currentLang);
             updateLanguage();
         });
 
@@ -274,6 +285,12 @@
                footerPrivacyEl.textContent = translations[currentLang].footerPrivacy;
            }
        }
+
+       // 페이지 로드시 저장된 설정 적용
+       document.addEventListener('DOMContentLoaded', () => {
+           updateTheme();
+           updateLanguage();
+       });
     </script>
 </body>
 </html>

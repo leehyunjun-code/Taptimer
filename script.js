@@ -42,13 +42,13 @@ let stopwatchRunning = false;
 let lapCount = 0;
 let lastLapTime = 0; // 마지막 랩의 시간을 저장
 
-// 다크모드 관련 변수
+// 다크모드 관련 변수 - localStorage에서 불러오기
 const themeToggleBtn = document.getElementById('themeToggleBtn');
-let darkMode = false;
+let darkMode = localStorage.getItem('darkMode') === 'true' || false;
 
-// 언어 관련 변수 및 텍스트
+// 언어 관련 변수 및 텍스트 - localStorage에서 불러오기
 const langToggleBtn = document.getElementById('langToggleBtn');
-let currentLang = 'ko'; // 기본값은 한국어
+let currentLang = localStorage.getItem('currentLang') || 'ko'; // 기본값은 한국어
 
 const translations = {
     ko: {
@@ -93,8 +93,6 @@ const translations = {
 		footerHome: 'Home',
         footerPrivacy: 'Privacy Policy'
     }
-	
-	
 };
 
 // 모드 전환 이벤트 리스너
@@ -112,15 +110,17 @@ stopwatchBtn.addEventListener('click', () => {
     timerSection.classList.remove('active');
 });
 
-// 테마 변경 이벤트 리스너
+// 테마 변경 이벤트 리스너 - localStorage에 저장
 themeToggleBtn.addEventListener('click', () => {
     darkMode = !darkMode;
+    localStorage.setItem('darkMode', darkMode.toString());
     updateTheme();
 });
 
-// 언어 전환 이벤트 리스너
+// 언어 전환 이벤트 리스너 - localStorage에 저장
 langToggleBtn.addEventListener('click', () => {
     currentLang = currentLang === 'ko' ? 'en' : 'ko';
+    localStorage.setItem('currentLang', currentLang);
     updateLanguage();
 });
 
@@ -401,7 +401,13 @@ timerEndCloseBtn.addEventListener('click', () => {
     timerEndOverlay.classList.remove('show');
 });
 
+// 페이지 로드시 저장된 설정 적용
+document.addEventListener('DOMContentLoaded', () => {
+    // 저장된 테마와 언어 설정 적용
+    updateTheme();
+    updateLanguage();
+});
+
 // 초기 화면 설정
 updateTimerDisplay();
 updateStopwatchDisplay();
-updateLanguage();

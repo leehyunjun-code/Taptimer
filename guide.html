@@ -52,6 +52,22 @@
             color: #2c3e50;
         }
         
+        /* 테마 토글 버튼 */
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .theme-toggle button {
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
         /* 언어 토글 버튼 */
         .lang-toggle {
             position: absolute;
@@ -206,6 +222,10 @@
             color: #5dade2;
         }
         
+        body.dark-mode .theme-toggle button {
+            color: #f0f0f0;
+        }
+        
         body.dark-mode .lang-toggle button {
             background-color: #444;
             color: #e0e0e0;
@@ -215,6 +235,9 @@
 <body>
     <div class="container">
         <header>
+            <div class="theme-toggle">
+                <button id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+            </div>
             <div class="lang-toggle">
                 <button id="langToggleBtn">한/EN</button>
             </div>
@@ -358,7 +381,7 @@
                 exerciseHiit: 'HIIT 운동: 30초 운동 + 10초 휴식',
                 exercisePlank: '플랭크: 1분씩 단계적으로 늘려가기',
                 exerciseRunning: '달리기: 스톱워치로 랩타임 기록',
-                exerciseStrength: '근력운동: 세트 간 휴식 시간 측정',
+                exerciseStrength: '근력운동: 세트간 휴식 시간 측정',
                 studyTitle: '공부할 때',
                 // 공부 예시 번역 추가
                 studyPomodoro: '포모도로 기법: 25분 집중 + 5분 휴식',
@@ -428,12 +451,24 @@
             }
         };
 
+        // 테마 토글 버튼
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+        // 테마 변경 이벤트 리스너
+        themeToggleBtn.addEventListener('click', () => {
+            darkMode = !darkMode;
+            localStorage.setItem('darkMode', darkMode.toString());
+            updateTheme();
+        });
+
         // 테마 업데이트 함수
         function updateTheme() {
             if (darkMode) {
                 document.body.classList.add('dark-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
             } else {
                 document.body.classList.remove('dark-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
             }
         }
 

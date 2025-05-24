@@ -70,7 +70,32 @@ const translations = {
         min30: '30분',
         hour1: '1시간',
 		footerHome: '홈',
-        footerPrivacy: '개인정보 처리방침'
+        footerGuide: '이용가이드',
+        footerPrivacy: '개인정보 처리방침',
+        // 사용방법 안내 번역 추가
+        usageGuideTitle: '사용방법 안내',
+        timerUsageTitle: '📱 무료 브라우저 타이머 사용법',
+        timerStep1: '원하는 시간을 시간, 분, 초 입력란에 설정하세요.',
+        timerStep2: '시작 버튼을 눌러 브라우저 타이머를 작동시키세요.',
+        timerStep3: '타이머가 0에 도달하면 소리 알림이 표시됩니다.',
+        timerTip: '팁: 빠른 설정 버튼(10초, 1분, 5분 등)을 사용하면 더 편리합니다! 이 무료 브라우저 타이머는 다운로드 없이 바로 사용 가능합니다.',
+        stopwatchUsageTitle: '⏱️ 웹 스톱워치 사용법',
+        stopwatchStep1: '상단의 \'스톱워치\' 탭을 클릭하여 모드를 전환하세요.',
+        stopwatchStep2: '시작 버튼을 눌러 브라우저 스톱워치로 시간 측정을 시작하세요.',
+        stopwatchStep3: '랩 기록 버튼으로 구간 시간을 기록할 수 있습니다.',
+        stopwatchTip: '팁: 운동이나 달리기할 때 각 구간의 시간을 기록하고 비교해보세요! 이 웹 스톱워치는 정확한 시간 측정을 제공합니다.',
+        usageExamplesTitle: '💡 브라우저 타이머 활용 예시',
+        cookingTitle: '🍳 요리',
+        cookingText: '라면 3분, 계란 삶기 6분, 스테이크 굽기 타이머',
+        exerciseTitle: '💪 운동',
+        exerciseText: 'HIIT 운동, 플랭크, 세트 간 휴식 시간 측정',
+        studyTitle: '📚 공부',
+        studyText: '포모도로 기법 (25분 집중 + 5분 휴식) 타이머',
+        workTitle: '💼 업무',
+        workText: '회의 시간, 집중 작업, 휴식 관리 도구',
+        detailedGuideText: '더 자세한 무료 브라우저 타이머 사용법은',
+        guideLink: '이용가이드',
+        detailedGuideText2: '를 확인하세요!'
     },
     en: {
         timer: 'Timer',
@@ -91,7 +116,32 @@ const translations = {
         min30: '30m',
         hour1: '1h',
 		footerHome: 'Home',
-        footerPrivacy: 'Privacy Policy'
+        footerGuide: 'User Guide',
+        footerPrivacy: 'Privacy Policy',
+        // 사용방법 안내 번역 추가
+        usageGuideTitle: 'Usage Guide',
+        timerUsageTitle: '📱 How to Use Free Browser Timer',
+        timerStep1: 'Set your desired time in the hours, minutes, and seconds input fields.',
+        timerStep2: 'Press the start button to activate the browser timer.',
+        timerStep3: 'A sound alert will be displayed when the timer reaches 0.',
+        timerTip: 'Tip: Use quick setting buttons (10s, 1m, 5m, etc.) for convenience! This free browser timer works without any download.',
+        stopwatchUsageTitle: '⏱️ How to Use Web Stopwatch',
+        stopwatchStep1: 'Click the \'Stopwatch\' tab at the top to switch modes.',
+        stopwatchStep2: 'Press the start button to begin time measurement with browser stopwatch.',
+        stopwatchStep3: 'Use the lap record button to record split times.',
+        stopwatchTip: 'Tip: Record and compare split times during exercise or running! This web stopwatch provides accurate time measurement.',
+        usageExamplesTitle: '💡 Browser Timer Usage Examples',
+        cookingTitle: '🍳 Cooking',
+        cookingText: 'Ramen 3min, Boiled eggs 6min, Steak grilling timer',
+        exerciseTitle: '💪 Exercise',
+        exerciseText: 'HIIT workouts, Plank, Rest time measurement between sets',
+        studyTitle: '📚 Study',
+        studyText: 'Pomodoro technique (25min focus + 5min break) timer',
+        workTitle: '💼 Work',
+        workText: 'Meeting time, Focused work, Break management tool',
+        detailedGuideText: 'For more detailed free browser timer instructions, check the',
+        guideLink: 'User Guide',
+        detailedGuideText2: '!'
     }
 };
 
@@ -344,15 +394,131 @@ function updateLanguage() {
 	
     // footer 링크 업데이트 코드 추가
     const footerHomeEl = document.getElementById('footerHome');
+    const footerGuideEl = document.getElementById('footerGuide');
     const footerPrivacyEl = document.getElementById('footerPrivacy');
     
     if (footerHomeEl) {
         footerHomeEl.textContent = translations[currentLang].footerHome;
     }
     
+    if (footerGuideEl) {
+        footerGuideEl.textContent = translations[currentLang].footerGuide;
+    }
+    
     if (footerPrivacyEl) {
         footerPrivacyEl.textContent = translations[currentLang].footerPrivacy;
     }	
+    
+    // 사용방법 안내 섹션 번역 업데이트
+    const usageGuideTitle = document.getElementById('usageGuideTitle');
+    if (usageGuideTitle) {
+        usageGuideTitle.textContent = translations[currentLang].usageGuideTitle;
+    }
+    
+    const timerUsageTitle = document.getElementById('timerUsageTitle');
+    if (timerUsageTitle) {
+        timerUsageTitle.textContent = translations[currentLang].timerUsageTitle;
+    }
+    
+    // 타이머 사용법 단계들
+    const timerStep1El = document.getElementById('timerStep1');
+    if (timerStep1El) {
+        timerStep1El.textContent = translations[currentLang].timerStep1;
+    }
+    
+    const timerStep2El = document.getElementById('timerStep2');
+    if (timerStep2El) {
+        timerStep2El.textContent = translations[currentLang].timerStep2;
+    }
+    
+    const timerStep3El = document.getElementById('timerStep3');
+    if (timerStep3El) {
+        timerStep3El.textContent = translations[currentLang].timerStep3;
+    }
+    
+    const timerTipEl = document.getElementById('timerTip');
+    if (timerTipEl) {
+        timerTipEl.innerHTML = `<strong>${translations[currentLang].timerTip}</strong>`;
+    }
+    
+    const stopwatchUsageTitle = document.getElementById('stopwatchUsageTitle');
+    if (stopwatchUsageTitle) {
+        stopwatchUsageTitle.textContent = translations[currentLang].stopwatchUsageTitle;
+    }
+    
+    // 스톱워치 사용법 단계들
+    const stopwatchStep1El = document.getElementById('stopwatchStep1');
+    if (stopwatchStep1El) {
+        stopwatchStep1El.textContent = translations[currentLang].stopwatchStep1;
+    }
+    
+    const stopwatchStep2El = document.getElementById('stopwatchStep2');
+    if (stopwatchStep2El) {
+        stopwatchStep2El.textContent = translations[currentLang].stopwatchStep2;
+    }
+    
+    const stopwatchStep3El = document.getElementById('stopwatchStep3');
+    if (stopwatchStep3El) {
+        stopwatchStep3El.textContent = translations[currentLang].stopwatchStep3;
+    }
+    
+    const stopwatchTipEl = document.getElementById('stopwatchTip');
+    if (stopwatchTipEl) {
+        stopwatchTipEl.innerHTML = `<strong>${translations[currentLang].stopwatchTip}</strong>`;
+    }
+    
+    // 활용 예시 섹션
+    const usageExamplesTitle = document.getElementById('usageExamplesTitle');
+    if (usageExamplesTitle) {
+        usageExamplesTitle.textContent = translations[currentLang].usageExamplesTitle;
+    }
+    
+    const cookingTitle = document.getElementById('cookingTitle');
+    if (cookingTitle) {
+        cookingTitle.textContent = translations[currentLang].cookingTitle;
+    }
+    
+    const cookingText = document.getElementById('cookingText');
+    if (cookingText) {
+        cookingText.textContent = translations[currentLang].cookingText;
+    }
+    
+    const exerciseTitle = document.getElementById('exerciseTitle');
+    if (exerciseTitle) {
+        exerciseTitle.textContent = translations[currentLang].exerciseTitle;
+    }
+    
+    const exerciseText = document.getElementById('exerciseText');
+    if (exerciseText) {
+        exerciseText.textContent = translations[currentLang].exerciseText;
+    }
+    
+    const studyTitle = document.getElementById('studyTitle');
+    if (studyTitle) {
+        studyTitle.textContent = translations[currentLang].studyTitle;
+    }
+    
+    const studyText = document.getElementById('studyText');
+    if (studyText) {
+        studyText.textContent = translations[currentLang].studyText;
+    }
+    
+    const workTitle = document.getElementById('workTitle');
+    if (workTitle) {
+        workTitle.textContent = translations[currentLang].workTitle;
+    }
+    
+    const workText = document.getElementById('workText');
+    if (workText) {
+        workText.textContent = translations[currentLang].workText;
+    }
+    
+    // 상세 가이드 링크
+    const detailedGuideText = document.getElementById('detailedGuideText');
+    const guideLink = document.getElementById('guideLink');
+    if (detailedGuideText && guideLink) {
+        detailedGuideText.innerHTML = `${translations[currentLang].detailedGuideText} <a href="guide.html" id="guideLink">${translations[currentLang].guideLink}</a>${translations[currentLang].detailedGuideText2}`;
+    }
     
     // 타이머 종료 텍스트도 업데이트
     timerEndText.textContent = translations[currentLang].timerEnd;

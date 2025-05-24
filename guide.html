@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<h3 id="timer-quick-title">빠른 설정 버튼</h3>
+            <p id="timer-quick-text">자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:</p>
+            <ul id="timer-quick-list">
+                <li>10초 - 짧은 휴식이나 카운트다운</li>
+                <li>1분 - 간단한 작<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -423,24 +427,13 @@
             document.getElementById('timer-quick-title').textContent = translations[currentLang].timerQuickTitle;
             document.getElementById('timer-quick-text').textContent = translations[currentLang].timerQuickText;
             
-            // 빠른 설정 버튼 리스트 업데이트 (안전하게 확인 후 처리)
-            const quick10s = document.getElementById('quick-10s');
-            if (quick10s) quick10s.textContent = translations[currentLang].quick10s;
-            
-            const quick1m = document.getElementById('quick-1m');
-            if (quick1m) quick1m.textContent = translations[currentLang].quick1m;
-            
-            const quick5m = document.getElementById('quick-5m');
-            if (quick5m) quick5m.textContent = translations[currentLang].quick5m;
-            
-            const quick10m = document.getElementById('quick-10m');
-            if (quick10m) quick10m.textContent = translations[currentLang].quick10m;
-            
-            const quick30m = document.getElementById('quick-30m');
-            if (quick30m) quick30m.textContent = translations[currentLang].quick30m;
-            
-            const quick1h = document.getElementById('quick-1h');
-            if (quick1h) quick1h.textContent = translations[currentLang].quick1h;
+            // 빠른 설정 버튼 리스트 업데이트
+            document.getElementById('quick-10s').textContent = translations[currentLang].quick10s;
+            document.getElementById('quick-1m').textContent = translations[currentLang].quick1m;
+            document.getElementById('quick-5m').textContent = translations[currentLang].quick5m;
+            document.getElementById('quick-10m').textContent = translations[currentLang].quick10m;
+            document.getElementById('quick-30m').textContent = translations[currentLang].quick30m;
+            document.getElementById('quick-1h').textContent = translations[currentLang].quick1h;
             
             // 팁 박스 업데이트
             const timerTipElement = document.getElementById('timer-tip');
@@ -469,47 +462,24 @@
             document.getElementById('language-text').textContent = translations[currentLang].languageText;
             document.getElementById('usage-examples-title').textContent = translations[currentLang].usageExamplesTitle;
             
-            // 활용 예시 섹션 업데이트 (안전하게 확인 후 처리)
+            // 활용 예시 섹션 업데이트
             document.getElementById('cooking-title').textContent = translations[currentLang].cookingTitle;
+            document.getElementById('cooking-ramen').textContent = translations[currentLang].cookingRamen;
+            document.getElementById('cooking-egg').textContent = translations[currentLang].cookingEgg;
+            document.getElementById('cooking-steak').textContent = translations[currentLang].cookingSteak;
+            document.getElementById('cooking-baking').textContent = translations[currentLang].cookingBaking;
+            
             document.getElementById('exercise-title').textContent = translations[currentLang].exerciseTitle;
+            document.getElementById('exercise-hiit').textContent = translations[currentLang].exerciseHiit;
+            document.getElementById('exercise-plank').textContent = translations[currentLang].exercisePlank;
+            document.getElementById('exercise-running').textContent = translations[currentLang].exerciseRunning;
+            document.getElementById('exercise-strength').textContent = translations[currentLang].exerciseStrength;
+            
             document.getElementById('study-title').textContent = translations[currentLang].studyTitle;
-            
-            // 개별 리스트 항목들 (있는 것만 업데이트)
-            const cookingRamen = document.getElementById('cooking-ramen');
-            if (cookingRamen) cookingRamen.textContent = translations[currentLang].cookingRamen;
-            
-            const cookingEgg = document.getElementById('cooking-egg');
-            if (cookingEgg) cookingEgg.textContent = translations[currentLang].cookingEgg;
-            
-            const cookingSteak = document.getElementById('cooking-steak');
-            if (cookingSteak) cookingSteak.textContent = translations[currentLang].cookingSteak;
-            
-            const cookingBaking = document.getElementById('cooking-baking');
-            if (cookingBaking) cookingBaking.textContent = translations[currentLang].cookingBaking;
-            
-            const exerciseHiit = document.getElementById('exercise-hiit');
-            if (exerciseHiit) exerciseHiit.textContent = translations[currentLang].exerciseHiit;
-            
-            const exercisePlank = document.getElementById('exercise-plank');
-            if (exercisePlank) exercisePlank.textContent = translations[currentLang].exercisePlank;
-            
-            const exerciseRunning = document.getElementById('exercise-running');
-            if (exerciseRunning) exerciseRunning.textContent = translations[currentLang].exerciseRunning;
-            
-            const exerciseStrength = document.getElementById('exercise-strength');
-            if (exerciseStrength) exerciseStrength.textContent = translations[currentLang].exerciseStrength;
-            
-            const studyPomodoro = document.getElementById('study-pomodoro');
-            if (studyPomodoro) studyPomodoro.textContent = translations[currentLang].studyPomodoro;
-            
-            const studyExam = document.getElementById('study-exam');
-            if (studyExam) studyExam.textContent = translations[currentLang].studyExam;
-            
-            const studyFocus = document.getElementById('study-focus');
-            if (studyFocus) studyFocus.textContent = translations[currentLang].studyFocus;
-            
-            const studySubject = document.getElementById('study-subject');
-            if (studySubject) studySubject.textContent = translations[currentLang].studySubject;
+            document.getElementById('study-pomodoro').textContent = translations[currentLang].studyPomodoro;
+            document.getElementById('study-exam').textContent = translations[currentLang].studyExam;
+            document.getElementById('study-focus').textContent = translations[currentLang].studyFocus;
+            document.getElementById('study-subject').textContent = translations[currentLang].studySubject;
             
             // footer 링크 업데이트
             document.getElementById('footerHome').textContent = translations[currentLang].footerHome;

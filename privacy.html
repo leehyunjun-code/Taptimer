@@ -46,6 +46,22 @@
             color: #2c3e50;
         }
         
+        /* 테마 토글 버튼 */
+        .theme-toggle {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .theme-toggle button {
+            padding: 8px;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: #333;
+        }
+        
         /* 언어 토글 버튼 */
         .lang-toggle {
             position: absolute;
@@ -141,6 +157,10 @@
             color: #5dade2;
         }
         
+        body.dark-mode .theme-toggle button {
+            color: #f0f0f0;
+        }
+        
         body.dark-mode .lang-toggle button {
             background-color: #444;
             color: #e0e0e0;
@@ -150,6 +170,9 @@
 <body>
     <div class="container">
         <header>
+            <div class="theme-toggle">
+                <button id="themeToggleBtn"><i class="fas fa-moon"></i></button>
+            </div>
             <div class="lang-toggle">
                 <button id="langToggleBtn">한/EN</button>
             </div>
@@ -216,18 +239,30 @@
                 content4: 'Free Browser Timer does not store user data, so no additional protection measures are required.',
                 section5: '5. Page Inquiries',
                 content5: 'For inquiries about the Free Browser Timer website, please contact hj040701.lee@gmail.com.',
-				footerHome: 'Home',
+                footerHome: 'Home',
                 footerGuide: 'User Guide',
                 footerPrivacy: 'Privacy Policy'
             }
         };
 
-        // 테마 업데이트 함수 추가
+        // 테마 토글 버튼
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+
+        // 테마 변경 이벤트 리스너
+        themeToggleBtn.addEventListener('click', () => {
+            darkMode = !darkMode;
+            localStorage.setItem('darkMode', darkMode.toString());
+            updateTheme();
+        });
+
+        // 테마 업데이트 함수
         function updateTheme() {
             if (darkMode) {
                 document.body.classList.add('dark-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
             } else {
                 document.body.classList.remove('dark-mode');
+                themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
             }
         }
 

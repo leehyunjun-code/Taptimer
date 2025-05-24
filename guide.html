@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이용가이드 - TapTimer</title>
+    <meta name="description" content="TapTimer 온라인 타이머와 스톱워치 사용법 가이드. 요리, 운동, 공부에 활용하는 방법을 알아보세요.">
+    <meta name="keywords" content="타이머 사용법, 스톱워치 가이드, 온라인 타이머 활용법, 요리 타이머, 운동 타이머">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* 기본 스타일 - index.html과 일관성 유지 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            min-height: 100vh;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        
+        /* 헤더 스타일 */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        
+        /* 언어 토글 버튼 */
+        .lang-toggle {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        
+        .lang-toggle button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+        
+        /* 가이드 내용 스타일 */
+        .guide-content {
+            padding: 0 10px;
+        }
+        
+        .guide-content h2 {
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+        }
+        
+        .guide-content h3 {
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+        
+        .guide-content p {
+            margin-bottom: 15px;
+        }
+        
+        .guide-content ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+        
+        .guide-content li {
+            margin-bottom: 8px;
+        }
+        
+        /* 단계별 가이드 스타일 */
+        .step-guide {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        /* 팁 박스 스타일 */
+        .tip-box {
+            background-color: #e8f5e8;
+            border: 1px solid #4caf50;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .tip-box::before {
+            content: "💡 ";
+            font-weight: bold;
+        }
+        
+        /* 푸터 네비게이션 스타일 */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-nav {
+            margin-bottom: 10px;
+        }
+        
+        .footer-nav a {
+            color: #4CAF50;
+            text-decoration: none;
+            padding: 0 5px;
+        }
+        
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 다크모드 스타일 */
+        body.dark-mode {
+            background-color: #222;
+            color: #f0f0f0;
+        }
+        
+        body.dark-mode .container {
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        body.dark-mode header h1 {
+            color: #e0e0e0;
+        }
+        
+        body.dark-mode .guide-content h2 {
+            color: #e0e0e0;
+            border-bottom-color: #5dade2;
+        }
+        
+        body.dark-mode .guide-content h3 {
+            color: #bdc3c7;
+        }
+        
+        body.dark-mode .step-guide {
+            background-color: #2c3e50;
+            border-left-color: #5dade2;
+        }
+        
+        body.dark-mode .step-number {
+            background-color: #5dade2;
+        }
+        
+        body.dark-mode .tip-box {
+            background-color: #2d4a2d;
+            border-color: #4caf50;
+        }
+        
+        body.dark-mode footer {
+            border-top-color: #555;
+        }
+        
+        body.dark-mode .footer-nav a {
+            color: #5dade2;
+        }
+        
+        body.dark-mode .lang-toggle button {
+            background-color: #444;
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="lang-toggle">
+                <button id="langToggleBtn">한/EN</button>
+            </div>
+            <h1 id="title">이용가이드</h1>
+        </header>
+        
+        <div class="guide-content">
+            <h2 id="intro-title">TapTimer 소개</h2>
+            <p id="intro-text">TapTimer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.</p>
+            
+            <h2 id="timer-guide-title">📱 타이머 사용 가이드</h2>
+            
+            <h3 id="timer-basic-title">기본 사용법</h3>
+            <div class="step-guide">
+                <p><span class="step-number">1</span><span id="timer-step1">원하는 시간을 시간, 분, 초 입력란에 설정하세요.</span></p>
+            </div>
+            <div class="step-guide">
+                <p><span class="step-number">2</span><span id="timer-step2">시작 버튼을 눌러 타이머를 작동시키세요.</span></p>
+            </div>
+            <div class="step-guide">
+                <p><span class="step-number">3</span><span id="timer-step3">타이머가 0에 도달하면 알림이 표시됩니다.</span></p>
+            </div>
+            
+            <h3 id="timer-quick-title">빠른 설정 버튼</h3>
+            <p id="timer-quick-text">자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:</p>
+            <ul id="timer-quick-list">
+                <li>10초 - 짧은 휴식이나 카운트다운</li>
+                <li>1분 - 간단한 작업 타이머</li>
+                <li>5분 - 짧은 휴식, 라면 타이머</li>
+                <li>10분 - 운동 세트, 짧은 공부</li>
+                <li>30분 - 집중 작업, 요리</li>
+                <li>1시간 - 긴 작업, 수업 시간</li>
+            </ul>
+            
+            <div class="tip-box" id="timer-tip">
+                <strong id="timer-tip-title">타이머 활용 팁:</strong> 포모도로 기법을 활용해 25분 작업 + 5분 휴식으로 생산성을 높여보세요!
+            </div>
+            
+            <h2 id="stopwatch-guide-title">⏱️ 스톱워치 사용 가이드</h2>
+            
+            <h3 id="stopwatch-basic-title">기본 사용법</h3>
+            <div class="step-guide">
+                <p><span class="step-number">1</span><span id="stopwatch-step1">스톱워치 탭을 클릭하여 모드를 전환하세요.</span></p>
+            </div>
+            <div class="step-guide">
+                <p><span class="step-number">2</span><span id="stopwatch-step2">시작 버튼을 눌러 시간 측정을 시작하세요.</span></p>
+            </div>
+            <div class="step-guide">
+                <p><span class="step-number">3</span><span id="stopwatch-step3">랩 기록 버튼으로 구간 시간을 기록할 수 있습니다.</span></p>
+            </div>
+            
+            <h3 id="stopwatch-lap-title">랩 기록 기능</h3>
+            <p id="stopwatch-lap-text">운동이나 달리기할 때 각 구간의 시간을 기록하고 비교할 수 있습니다. 랩 기록은 구간 시간과 총 경과 시간을 모두 표시합니다.</p>
+            
+            <div class="tip-box" id="stopwatch-tip">
+                <strong id="stopwatch-tip-title">스톱워치 활용 팁:</strong> 운동 세트 간 휴식 시간이나 업무 작업 시간을 측정해 효율성을 분석해보세요!
+            </div>
+            
+            <h2 id="features-title">🔧 추가 기능</h2>
+            
+            <h3 id="dark-mode-title">다크 모드</h3>
+            <p id="dark-mode-text">어두운 환경에서 눈의 피로를 줄이기 위해 다크 모드를 제공합니다. 화면 상단의 달/해 아이콘을 클릭하여 전환할 수 있습니다.</p>
+            
+            <h3 id="language-title">다국어 지원</h3>
+            <p id="language-text">한국어와 영어를 지원합니다. 화면 상단의 "한/EN" 버튼을 클릭하여 언어를 전환할 수 있습니다.</p>
+            
+            <h2 id="usage-examples-title">💡 활용 예시</h2>
+            
+            <h3 id="cooking-title">요리할 때</h3>
+            <ul id="cooking-list">
+                <li>라면: 3-4분 타이머</li>
+                <li>계란 삶기: 6-10분 (원하는 정도에 따라)</li>
+                <li>스테이크: 앞뒤로 3-5분씩</li>
+                <li>베이킹: 레시피에 따른 정확한 시간 설정</li>
+            </ul>
+            
+            <h3 id="exercise-title">운동할 때</h3>
+            <ul id="exercise-list">
+                <li>HIIT 운동: 30초 운동 + 10초 휴식</li>
+                <li>플랭크: 1분씩 단계적으로 늘려가기</li>
+                <li>달리기: 스톱워치로 랩타임 기록</li>
+                <li>근력운동: 세트 간 휴식 시간 측정</li>
+            </ul>
+            
+            <h3 id="study-title">공부할 때</h3>
+            <ul id="study-list">
+                <li>포모도로 기법: 25분 집중 + 5분 휴식</li>
+                <li>시험 시간 연습: 실제 시험 시간으로 설정</li>
+                <li>집중력 측정: 스톱워치로 실제 집중 시간 체크</li>
+                <li>과목별 공부 시간: 각 과목에 할당된 시간 관리</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <nav class="footer-nav">
+                <a href="index.html" id="footerHome">홈</a> | 
+                <a href="guide.html" id="footerGuide">이용가이드</a> | 
+                <a href="privacy.html" id="footerPrivacy">개인정보 처리방침</a>
+            </nav>
+        </footer>
+    </div>
+
+    <script>
+        // localStorage에서 설정 불러오기
+        let darkMode = localStorage.getItem('darkMode') === 'true' || false;
+        let currentLang = localStorage.getItem('currentLang') || 'ko';
+
+        const translations = {
+            ko: {
+                title: '이용가이드',
+                introTitle: 'TapTimer 소개',
+                introText: 'TapTimer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.',
+                timerGuideTitle: '📱 타이머 사용 가이드',
+                timerBasicTitle: '기본 사용법',
+                timerStep1: '원하는 시간을 시간, 분, 초 입력란에 설정하세요.',
+                timerStep2: '시작 버튼을 눌러 타이머를 작동시키세요.',
+                timerStep3: '타이머가 0에 도달하면 알림이 표시됩니다.',
+                timerQuickTitle: '빠른 설정 버튼',
+                timerQuickText: '자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:',
+                timerTipTitle: '타이머 활용 팁:',
+                timerTip: '포모도로 기법을 활용해 25분 작업 + 5분 휴식으로 생산성을 높여보세요!',
+                stopwatchGuideTitle: '⏱️ 스톱워치 사용 가이드',
+                stopwatchBasicTitle: '기본 사용법',
+                stopwatchStep1: '스톱워치 탭을 클릭하여 모드를 전환하세요.',
+                stopwatchStep2: '시작 버튼을 눌러 시간 측정을 시작하세요.',
+                stopwatchStep3: '랩 기록 버튼으로 구간 시간을 기록할 수 있습니다.',
+                stopwatchLapTitle: '랩 기록 기능',
+                stopwatchLapText: '운동이나 달리기할 때 각 구간의 시간을 기록하고 비교할 수 있습니다. 랩 기록은 구간 시간과 총 경과 시간을 모두 표시합니다.',
+                stopwatchTipTitle: '스톱워치 활용 팁:',
+                stopwatchTip: '운동 세트 간 휴식 시간이나 업무 작업 시간을 측정해 효율성을 분석해보세요!',
+                featuresTitle: '🔧 추가 기능',
+                darkModeTitle: '다크 모드',
+                darkModeText: '어두운 환경에서 눈의 피로를 줄이기 위해 다크 모드를 제공합니다. 화면 상단의 달/해 아이콘을 클릭하여 전환할 수 있습니다.',
+                languageTitle: '다국어 지원',
+                languageText: '한국어와 영어를 지원합니다. 화면 상단의 "한/EN" 버튼을 클릭하여 언어를 전환할 수 있습니다.',
+                usageExamplesTitle: '💡 활용 예시',
+                cookingTitle: '요리할 때',
+                exerciseTitle: '운동할 때',
+                studyTitle: '공부할 때',
+                footerHome: '홈',
+                footerGuide: '이용가이드',
+                footerPrivacy: '개인정보 처리방침'
+            },
+            en: {
+                title: 'User Guide',
+                introTitle: 'TapTimer Introduction',
+                introText: 'TapTimer is a simple and practical online timer and stopwatch. It helps you manage time in various situations such as cooking, exercising, studying, and working.',
+                timerGuideTitle: '📱 Timer Usage Guide',
+                timerBasicTitle: 'Basic Usage',
+                timerStep1: 'Set your desired time in the hours, minutes, and seconds input fields.',
+                timerStep2: 'Press the start button to activate the timer.',
+                timerStep3: 'An alert will be displayed when the timer reaches 0.',
+                timerQuickTitle: 'Quick Setting Buttons',
+                timerQuickText: 'Buttons to quickly set frequently used times:',
+                timerTipTitle: 'Timer Tips:',
+                timerTip: 'Use the Pomodoro technique with 25 minutes of work + 5 minutes of rest to boost productivity!',
+                stopwatchGuideTitle: '⏱️ Stopwatch Usage Guide',
+                stopwatchBasicTitle: 'Basic Usage',
+                stopwatchStep1: 'Click the stopwatch tab to switch modes.',
+                stopwatchStep2: 'Press the start button to begin time measurement.',
+                stopwatchStep3: 'Use the lap record button to record split times.',
+                stopwatchLapTitle: 'Lap Record Feature',
+                stopwatchLapText: 'You can record and compare split times during exercise or running. Lap records show both split time and total elapsed time.',
+                stopwatchTipTitle: 'Stopwatch Tips:',
+                stopwatchTip: 'Measure rest time between exercise sets or work task durations to analyze efficiency!',
+                featuresTitle: '🔧 Additional Features',
+                darkModeTitle: 'Dark Mode',
+                darkModeText: 'Dark mode is provided to reduce eye strain in dark environments. Click the moon/sun icon at the top of the screen to switch.',
+                languageTitle: 'Multi-language Support',
+                languageText: 'Korean and English are supported. Click the "한/EN" button at the top of the screen to switch languages.',
+                usageExamplesTitle: '💡 Usage Examples',
+                cookingTitle: 'When Cooking',
+                exerciseTitle: 'When Exercising',
+                studyTitle: 'When Studying',
+                footerHome: 'Home',
+                footerGuide: 'User Guide',
+                footerPrivacy: 'Privacy Policy'
+            }
+        };
+
+        // 테마 업데이트 함수
+        function updateTheme() {
+            if (darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        }
+
+        // 언어 전환 이벤트 리스너
+        document.getElementById('langToggleBtn').addEventListener('click', () => {
+            currentLang = currentLang === 'ko' ? 'en' : 'ko';
+            localStorage.setItem('currentLang', currentLang);
+            updateLanguage();
+        });
+
+        // 언어 업데이트 함수
+        function updateLanguage() {
+            // 제목과 섹션 업데이트
+            document.getElementById('title').textContent = translations[currentLang].title;
+            document.getElementById('intro-title').textContent = translations[currentLang].introTitle;
+            document.getElementById('intro-text').textContent = translations[currentLang].introText;
+            document.getElementById('timer-guide-title').textContent = translations[currentLang].timerGuideTitle;
+            document.getElementById('timer-basic-title').textContent = translations[currentLang].timerBasicTitle;
+            document.getElementById('timer-step1').textContent = translations[currentLang].timerStep1;
+            document.getElementById('timer-step2').textContent = translations[currentLang].timerStep2;
+            document.getElementById('timer-step3').textContent = translations[currentLang].timerStep3;
+            document.getElementById('timer-quick-title').textContent = translations[currentLang].timerQuickTitle;
+            document.getElementById('timer-quick-text').textContent = translations[currentLang].timerQuickText;
+            
+            // 팁 박스 업데이트
+            const timerTipElement = document.getElementById('timer-tip');
+            timerTipElement.innerHTML = `<strong>${translations[currentLang].timerTipTitle}</strong> ${translations[currentLang].timerTip}`;
+            
+            document.getElementById('stopwatch-guide-title').textContent = translations[currentLang].stopwatchGuideTitle;
+            document.getElementById('stopwatch-basic-title').textContent = translations[currentLang].stopwatchBasicTitle;
+            document.getElementById('stopwatch-step1').textContent = translations[currentLang].stopwatchStep1;
+            document.getElementById('stopwatch-step2').textContent = translations[currentLang].stopwatchStep2;
+            document.getElementById('stopwatch-step3').textContent = translations[currentLang].stopwatchStep3;
+            document.getElementById('stopwatch-lap-title').textContent = translations[currentLang].stopwatchLapTitle;
+            document.getElementById('stopwatch-lap-text').textContent = translations[currentLang].stopwatchLapText;
+            
+            // 스톱워치 팁 박스 업데이트
+            const stopwatchTipElement = document.getElementById('stopwatch-tip');
+            stopwatchTipElement.innerHTML = `<strong>${translations[currentLang].stopwatchTipTitle}</strong> ${translations[currentLang].stopwatchTip}`;
+            
+            document.getElementById('features-title').textContent = translations[currentLang].featuresTitle;
+            document.getElementById('dark-mode-title').textContent = translations[currentLang].darkModeTitle;
+            document.getElementById('dark-mode-text').textContent = translations[currentLang].darkModeText;
+            document.getElementById('language-title').textContent = translations[currentLang].languageTitle;
+            document.getElementById('language-text').textContent = translations[currentLang].languageText;
+            document.getElementById('usage-examples-title').textContent = translations[currentLang].usageExamplesTitle;
+            document.getElementById('cooking-title').textContent = translations[currentLang].cookingTitle;
+            document.getElementById('exercise-title').textContent = translations[currentLang].exerciseTitle;
+            document.getElementById('study-title').textContent = translations[currentLang].studyTitle;
+            
+            // footer 링크 업데이트
+            document.getElementById('footerHome').textContent = translations[currentLang].footerHome;
+            document.getElementById('footerGuide').textContent = translations[currentLang].footerGuide;
+            document.getElementById('footerPrivacy').textContent = translations[currentLang].footerPrivacy;
+        }
+
+        // 페이지 로드시 저장된 설정 적용
+        document.addEventListener('DOMContentLoaded', () => {
+            updateTheme();
+            updateLanguage();
+        });
+    </script>
+</body>
+</html>

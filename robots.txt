@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
+
+# 중요한 페이지들
+Allow: /index.html
+Allow: /guide.html
+Allow: /privacy.html
+
+# CSS, JS, 이미지 허용
+Allow: /style.css
+Allow: /script.js
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.ico
+
+# 사이트맵 위치
 Sitemap: https://taptimer.easyutilities.org/sitemap.xml
+
+# 크롤링 속도 조절 (선택사항)
+Crawl-delay: 1

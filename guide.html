@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이용가이드 - TapTimer</title>
-    <meta name="description" content="TapTimer 온라인 타이머와 스톱워치 사용법 가이드. 요리, 운동, 공부에 활용하는 방법을 알아보세요.">
+    <title>이용가이드 - Free Browser Timer</title>
+    <meta name="description" content="Free Browser Timer 온라인 타이머와 스톱워치 사용법 가이드. 요리, 운동, 공부에 활용하는 방법을 알아보세요.">
     <meta name="keywords" content="타이머 사용법, 스톱워치 가이드, 온라인 타이머 활용법, 요리 타이머, 운동 타이머">
     
     <link rel="stylesheet" href="style.css">
@@ -220,8 +220,8 @@
         </header>
         
         <div class="guide-content">
-            <h2 id="intro-title">TapTimer 소개</h2>
-            <p id="intro-text">TapTimer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.</p>
+            <h2 id="intro-title">Free Browser Timer 소개</h2>
+            <p id="intro-text">Free Browser Timer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.</p>
             
             <h2 id="timer-guide-title">📱 타이머 사용 가이드</h2>
             
@@ -239,12 +239,12 @@
             <h3 id="timer-quick-title">빠른 설정 버튼</h3>
             <p id="timer-quick-text">자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:</p>
             <ul id="timer-quick-list">
-                <li>10초 - 짧은 휴식이나 카운트다운</li>
-                <li>1분 - 간단한 작업 타이머</li>
-                <li>5분 - 짧은 휴식, 라면 타이머</li>
-                <li>10분 - 운동 세트, 짧은 공부</li>
-                <li>30분 - 집중 작업, 요리</li>
-                <li>1시간 - 긴 작업, 수업 시간</li>
+                <li id="quick-10s">10초 - 짧은 휴식이나 카운트다운</li>
+                <li id="quick-1m">1분 - 간단한 작업 타이머</li>
+                <li id="quick-5m">5분 - 짧은 휴식, 라면 타이머</li>
+                <li id="quick-10m">10분 - 운동 세트, 짧은 공부</li>
+                <li id="quick-30m">30분 - 집중 작업, 요리</li>
+                <li id="quick-1h">1시간 - 긴 작업, 수업 시간</li>
             </ul>
             
             <div class="tip-box" id="timer-tip">
@@ -283,26 +283,26 @@
             
             <h3 id="cooking-title">요리할 때</h3>
             <ul id="cooking-list">
-                <li>라면: 3-4분 타이머</li>
-                <li>계란 삶기: 6-10분 (원하는 정도에 따라)</li>
-                <li>스테이크: 앞뒤로 3-5분씩</li>
-                <li>베이킹: 레시피에 따른 정확한 시간 설정</li>
+                <li id="cooking-ramen">라면: 3-4분 타이머</li>
+                <li id="cooking-egg">계란 삶기: 6-10분 (원하는 정도에 따라)</li>
+                <li id="cooking-steak">스테이크: 앞뒤로 3-5분씩</li>
+                <li id="cooking-baking">베이킹: 레시피에 따른 정확한 시간 설정</li>
             </ul>
             
             <h3 id="exercise-title">운동할 때</h3>
             <ul id="exercise-list">
-                <li>HIIT 운동: 30초 운동 + 10초 휴식</li>
-                <li>플랭크: 1분씩 단계적으로 늘려가기</li>
-                <li>달리기: 스톱워치로 랩타임 기록</li>
-                <li>근력운동: 세트 간 휴식 시간 측정</li>
+                <li id="exercise-hiit">HIIT 운동: 30초 운동 + 10초 휴식</li>
+                <li id="exercise-plank">플랭크: 1분씩 단계적으로 늘려가기</li>
+                <li id="exercise-running">달리기: 스톱워치로 랩타임 기록</li>
+                <li id="exercise-strength">근력운동: 세트 간 휴식 시간 측정</li>
             </ul>
             
             <h3 id="study-title">공부할 때</h3>
             <ul id="study-list">
-                <li>포모도로 기법: 25분 집중 + 5분 휴식</li>
-                <li>시험 시간 연습: 실제 시험 시간으로 설정</li>
-                <li>집중력 측정: 스톱워치로 실제 집중 시간 체크</li>
-                <li>과목별 공부 시간: 각 과목에 할당된 시간 관리</li>
+                <li id="study-pomodoro">포모도로 기법: 25분 집중 + 5분 휴식</li>
+                <li id="study-exam">시험 시간 연습: 실제 시험 시간으로 설정</li>
+                <li id="study-focus">집중력 측정: 스톱워치로 실제 집중 시간 체크</li>
+                <li id="study-subject">과목별 공부 시간: 각 과목에 할당된 시간 관리</li>
             </ul>
         </div>
         
@@ -323,8 +323,8 @@
         const translations = {
             ko: {
                 title: '이용가이드',
-                introTitle: 'TapTimer 소개',
-                introText: 'TapTimer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.',
+                introTitle: 'Free Browser Timer 소개',
+                introText: 'Free Browser Timer는 간편하고 실용적인 온라인 타이머 및 스톱워치입니다. 요리, 운동, 공부, 업무 등 다양한 상황에서 시간 관리를 도와드립니다.',
                 timerGuideTitle: '📱 타이머 사용 가이드',
                 timerBasicTitle: '기본 사용법',
                 timerStep1: '원하는 시간을 시간, 분, 초 입력란에 설정하세요.',
@@ -358,8 +358,8 @@
             },
             en: {
                 title: 'User Guide',
-                introTitle: 'TapTimer Introduction',
-                introText: 'TapTimer is a simple and practical online timer and stopwatch. It helps you manage time in various situations such as cooking, exercising, studying, and working.',
+                introTitle: 'Free Browser Timer Introduction',
+                introText: 'Free Browser Timer is a simple and practical online timer and stopwatch. It helps you manage time in various situations such as cooking, exercising, studying, and working.',
                 timerGuideTitle: '📱 Timer Usage Guide',
                 timerBasicTitle: 'Basic Usage',
                 timerStep1: 'Set your desired time in the hours, minutes, and seconds input fields.',
@@ -423,6 +423,14 @@
             document.getElementById('timer-quick-title').textContent = translations[currentLang].timerQuickTitle;
             document.getElementById('timer-quick-text').textContent = translations[currentLang].timerQuickText;
             
+            // 빠른 설정 버튼 리스트 업데이트
+            document.getElementById('quick-10s').textContent = translations[currentLang].quick10s;
+            document.getElementById('quick-1m').textContent = translations[currentLang].quick1m;
+            document.getElementById('quick-5m').textContent = translations[currentLang].quick5m;
+            document.getElementById('quick-10m').textContent = translations[currentLang].quick10m;
+            document.getElementById('quick-30m').textContent = translations[currentLang].quick30m;
+            document.getElementById('quick-1h').textContent = translations[currentLang].quick1h;
+            
             // 팁 박스 업데이트
             const timerTipElement = document.getElementById('timer-tip');
             timerTipElement.innerHTML = `<strong>${translations[currentLang].timerTipTitle}</strong> ${translations[currentLang].timerTip}`;
@@ -445,9 +453,25 @@
             document.getElementById('language-title').textContent = translations[currentLang].languageTitle;
             document.getElementById('language-text').textContent = translations[currentLang].languageText;
             document.getElementById('usage-examples-title').textContent = translations[currentLang].usageExamplesTitle;
+            
+            // 활용 예시 섹션 업데이트
             document.getElementById('cooking-title').textContent = translations[currentLang].cookingTitle;
+            document.getElementById('cooking-ramen').textContent = translations[currentLang].cookingRamen;
+            document.getElementById('cooking-egg').textContent = translations[currentLang].cookingEgg;
+            document.getElementById('cooking-steak').textContent = translations[currentLang].cookingSteak;
+            document.getElementById('cooking-baking').textContent = translations[currentLang].cookingBaking;
+            
             document.getElementById('exercise-title').textContent = translations[currentLang].exerciseTitle;
+            document.getElementById('exercise-hiit').textContent = translations[currentLang].exerciseHiit;
+            document.getElementById('exercise-plank').textContent = translations[currentLang].exercisePlank;
+            document.getElementById('exercise-running').textContent = translations[currentLang].exerciseRunning;
+            document.getElementById('exercise-strength').textContent = translations[currentLang].exerciseStrength;
+            
             document.getElementById('study-title').textContent = translations[currentLang].studyTitle;
+            document.getElementById('study-pomodoro').textContent = translations[currentLang].studyPomodoro;
+            document.getElementById('study-exam').textContent = translations[currentLang].studyExam;
+            document.getElementById('study-focus').textContent = translations[currentLang].studyFocus;
+            document.getElementById('study-subject').textContent = translations[currentLang].studySubject;
             
             // footer 링크 업데이트
             document.getElementById('footerHome').textContent = translations[currentLang].footerHome;

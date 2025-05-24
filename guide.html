@@ -1,15 +1,22 @@
-<h3 id="timer-quick-title">빠른 설정 버튼</h3>
+document.getElementById('timer-step1').textContent = translations[currentLang].timerStep1;
+            document.getElementById('timer-step2').textContent = translations[currentLang].timerStep2;
+            document.getElementById('timer-step3').textContent = translations[currentLang].timerStep3;
+            
+            // 팁 박스 업데이트            <h3 id="timer-quick-title">빠른 설정 버튼</h3>
             <p id="timer-quick-text">자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:</p>
             <ul id="timer-quick-list">
                 <li>10초 - 짧은 휴식이나 카운트다운</li>
                 <li>1분 - 간단한 작<!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" translate="no" class="notranslate">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>이용가이드 - Free Browser Timer</title>
     <meta name="description" content="Free Browser Timer 온라인 타이머와 스톱워치 사용법 가이드. 요리, 운동, 공부에 활용하는 방법을 알아보세요.">
     <meta name="keywords" content="타이머 사용법, 스톱워치 가이드, 온라인 타이머 활용법, 요리 타이머, 운동 타이머">
+    
+    <meta name="google" content="notranslate">
+    <meta http-equiv="Content-Language" content="ko">
     
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -240,6 +247,7 @@
                 <p><span class="step-number">3</span><span id="timer-step3">타이머가 0에 도달하면 알림이 표시됩니다.</span></p>
             </div>
             
+            
             <h3 id="timer-quick-title">빠른 설정 버튼</h3>
             <p id="timer-quick-text">자주 사용하는 시간을 빠르게 설정할 수 있는 버튼들:</p>
             <ul id="timer-quick-list">
@@ -468,16 +476,6 @@
             document.getElementById('timer-step1').textContent = translations[currentLang].timerStep1;
             document.getElementById('timer-step2').textContent = translations[currentLang].timerStep2;
             document.getElementById('timer-step3').textContent = translations[currentLang].timerStep3;
-            document.getElementById('timer-quick-title').textContent = translations[currentLang].timerQuickTitle;
-            document.getElementById('timer-quick-text').textContent = translations[currentLang].timerQuickText;
-            
-            // 빠른 설정 버튼 리스트 업데이트
-            document.getElementById('quick-10s').textContent = translations[currentLang].quick10s;
-            document.getElementById('quick-1m').textContent = translations[currentLang].quick1m;
-            document.getElementById('quick-5m').textContent = translations[currentLang].quick5m;
-            document.getElementById('quick-10m').textContent = translations[currentLang].quick10m;
-            document.getElementById('quick-30m').textContent = translations[currentLang].quick30m;
-            document.getElementById('quick-1h').textContent = translations[currentLang].quick1h;
             
             // 팁 박스 업데이트
             const timerTipElement = document.getElementById('timer-tip');

@@ -11,7 +11,7 @@
     <meta name="description" content="Free browser timer with sound alert for cooking, workouts, and study. Easy-to-use web countdown timer and stopwatch with lap times. No download required - works in any browser.">
     
     <!-- 키워드 (참고용) -->
-    <meta name="keywords" content="free browser timer, browser timer sound alert, web countdown timer, online timer with alarm, browser stopwatch, free web timer, countdown timer browser">
+    <meta name="keywords" content="browser timer, web countdown, online stopwatch, timer alert, countdown sound, web timer, browser countdown, online alarm, timer notification, web stopwatch">
     
     <!-- 작성자 -->
     <meta name="author" content="Free Browser Timer">
@@ -19,6 +19,12 @@
     
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="ZDApzWxKLOwefrs3psTXz-MF4ipAjccrwLu0t7ofyKM" />
+    
+    <!-- Google AdSense 인증 메타 태그 -->
+    <meta name="google-adsense-account" content="ca-pub-9782687963889640">
+    
+    <!-- Google AdSense 자동 광고 코드 -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9782687963889640" crossorigin="anonymous"></script>
     
     <!-- Open Graph (소셜미디어 최적화) -->
     <meta property="og:type" content="website">
@@ -103,6 +109,16 @@
             </div>
         </header>
 
+        <!-- 상단 광고 배너 -->
+        <div class="ad-container ad-top">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9782687963889640"
+                 data-ad-slot="1234567890"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+
         <main>
             <!-- 타이머 섹션 -->
             <section id="timerSection" class="active">
@@ -155,6 +171,16 @@
                 </div>
             </section>
         </main>
+        
+        <!-- 중간 광고 (사각형) -->
+        <div class="ad-container ad-middle">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9782687963889640"
+                 data-ad-slot="0987654321"
+                 data-ad-format="rectangle"
+                 data-full-width-responsive="true"></ins>
+        </div>
         
         <!-- 사용방법 안내 섹션 -->
         <section class="usage-guide">
@@ -229,6 +255,16 @@
             </div>
         </section>
         
+        <!-- 하단 광고 -->
+        <div class="ad-container ad-bottom">
+            <ins class="adsbygoogle"
+                 style="display:block"
+                 data-ad-client="ca-pub-9782687963889640"
+                 data-ad-slot="1122334455"
+                 data-ad-format="auto"
+                 data-full-width-responsive="true"></ins>
+        </div>
+        
         <footer>
             <nav class="footer-nav">
                 <a href="index.html" id="footerHome">Home</a> | 
@@ -247,5 +283,22 @@
     </div>
 
     <script src="script.js" defer></script>
+    
+    <!-- AdSense 광고 초기화 스크립트 -->
+    <script>
+        // 페이지 로드 후 광고 로드
+        window.addEventListener('load', function() {
+            // 광고가 있는지 확인하고 로드
+            if (typeof(adsbygoogle) !== "undefined") {
+                try {
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                } catch (e) {
+                    console.log('AdSense loading error:', e);
+                }
+            }
+        });
+    </script>
 </body>
 </html>
